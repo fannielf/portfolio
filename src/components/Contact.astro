@@ -40,7 +40,7 @@
                         <div>
                             <p class="text-sm text-gray-400">Email</p>
                             <a
-                                href="mailto:roope.hongisto@example.com"
+                                href="mailto:hongistoroope@gmail.com"
                                 class="text-blue-300 hover:text-blue-200 transition-colors"
                             >
                                 hongistoroope@gmail.com
@@ -115,7 +115,26 @@
                 Send a Message
             </h3>
 
-            <form class="space-y-4" id="contact-form">
+            <form
+                class="space-y-4"
+                id="contact-form"
+                action="https://formsubmit.co/hongistoroope@gmail.com"
+                method="POST"
+            >
+                <!-- FormSubmit configuration -->
+                <input
+                    type="hidden"
+                    name="_subject"
+                    value="New Portfolio Contact!"
+                />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_template" value="table" />
+                <input
+                    type="hidden"
+                    name="_next"
+                    value="https://ruboma.github.io/portfolio/contact?success=true"
+                />
+
                 <div>
                     <label
                         for="name"
@@ -157,7 +176,7 @@
                     <input
                         type="text"
                         id="subject"
-                        name="subject"
+                        name="_subject"
                         required
                         class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition-colors"
                         placeholder="What's this about?"
@@ -181,6 +200,7 @@
 
                 <button
                     type="submit"
+                    id="submit-btn"
                     class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-xl transition-colors duration-300 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900"
                 >
                     Send Message
@@ -188,44 +208,60 @@
             </form>
 
             <p class="text-sm text-gray-400 mt-4 text-center">
-                I'll get back to you as soon as possible!
+                Your message will be sent directly to my email. I'll get back to
+                you as soon as possible!
             </p>
         </div>
     </div>
 </section>
 
 <script>
+    // Check for success parameter in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const success = urlParams.get("success");
+
+    if (success === "true") {
+        // Show success message
+        const successMessage = document.createElement("div");
+        successMessage.className =
+            "fixed top-4 right-4 bg-green-600 text-white p-4 rounded-xl shadow-lg z-50 max-w-sm";
+        successMessage.innerHTML = `
+            <div class="flex items-center gap-3">
+                <svg class="w-6 h-6 text-green-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+                <div>
+                    <h4 class="font-semibold">Message Sent!</h4>
+                    <p class="text-sm text-green-100">Thanks for reaching out. I'll get back to you soon!</p>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(successMessage);
+
+        // Remove success message after 5 seconds
+        setTimeout(() => {
+            successMessage.remove();
+        }, 5000);
+
+        // Clean URL by removing the success parameter
+        const newUrl = window.location.href.split("?")[0];
+        window.history.replaceState({}, document.title, newUrl);
+    }
+
     // Handle form submission
     document
         .getElementById("contact-form")
         ?.addEventListener("submit", function (e) {
-            e.preventDefault();
-
-            // Get form data
-            const formData = new FormData(e.target as HTMLFormElement);
-            const name = formData.get("name");
-            const email = formData.get("email");
-            const subject = formData.get("subject");
-            const message = formData.get("message");
-
-            // Create mailto link
-            const mailtoLink = `mailto:roope.hongisto@example.com?subject=${encodeURIComponent(subject as string)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`)}`;
-
-            // Open default email client
-            window.location.href = mailtoLink;
-
-            // Show success message
-            const form = e.target as HTMLFormElement;
-            const button = form.querySelector(
-                'button[type="submit"]',
+            const button = document.getElementById(
+                "submit-btn",
             ) as HTMLButtonElement;
             const originalText = button.textContent;
-            button.textContent = "Opening email client...";
+
+            // Show loading state
+            button.textContent = "Sending...";
             button.disabled = true;
 
-            setTimeout(() => {
-                button.textContent = originalText;
-                button.disabled = false;
-            }, 3000);
+            // Form will be submitted normally to FormSubmit
+            // No need to prevent default - let FormSubmit handle it
         });
 </script>
