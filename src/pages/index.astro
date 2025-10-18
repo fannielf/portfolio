@@ -1,23 +1,20 @@
 ---
+import Layout from "../layouts/Layout.astro";
 import About from "../components/About.astro";
 import Skills from "../components/Skills.astro";
 import Projects from "../components/Projects.astro";
 import "../styles/global.css";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<title>Roope | Portfolio</title>
-		<meta
-			name="description"
-			content="Portfolio of Roope — Software Developer at Gritlab"
-		/>
-	</head>
-	<body class="bg-gray-950 text-white font-sans min-h-screen flex flex-col">
-		<header class="py-8 text-center bg-gray-900 shadow-md">
-			<h1 class="text-4xl font-bold mb-2">Hi, I'm Roope 👋</h1>
-			<p class="text-gray-400">Software Developer · Grit:Lab Student</p>
+<Layout title="Roope | Portfolio">
+	<div class="bg-gray-950 text-white font-sans min-h-screen flex flex-col">
+		<header class="py-6 sm:py-8 text-center bg-gray-900 shadow-md">
+			<h1 class="text-3xl sm:text-4xl font-bold mb-2 px-4">
+				Hi, I'm Roope 👋
+			</h1>
+			<p class="text-gray-400 text-sm sm:text-base px-4">
+				Software Developer · Grit:Lab Student
+			</p>
 		</header>
 
 		<main class="flex-grow">
@@ -26,8 +23,10 @@ import "../styles/global.css";
 			<Projects />
 		</main>
 
-		<footer class="text-center py-8 text-gray-500 border-t border-gray-800">
+		<footer
+			class="text-center py-6 sm:py-8 text-gray-500 border-t border-gray-800 text-sm sm:text-base px-4"
+		>
 			Built with Astro · Hosted on GitHub Pages
 		</footer>
-	</body>
-</html>
+	</div>
+</Layout>

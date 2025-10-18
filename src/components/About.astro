@@ -11,15 +11,18 @@ I love building efficient systems, experimenting with real-time apps, and explor
 ---
 
 <section
-    class="max-w-4xl mx-auto my-12 px-4 flex flex-col items-center text-center"
+    class="max-w-4xl mx-auto my-8 sm:my-12 px-4 sm:px-6 flex flex-col items-center text-center"
 >
     <img
         src={about.image}
         alt={about.name}
-        class="w-56 rounded-xl border-4 border-gray-700 mb-4 shadow-lg object-cover"
-        style="width: 224px; max-width: 224px;"
+        class="w-40 sm:w-56 rounded-xl border-4 border-gray-700 mb-4 shadow-lg object-cover aspect-square"
     />
-    <h2 class="text-3xl font-bold mb-2">{about.name}</h2>
-    <p class="text-gray-400 mb-4">{about.title}</p>
-    <p class="text-gray-300 leading-relaxed max-w-2xl">{about.bio}</p>
+    <h2 class="text-2xl sm:text-3xl font-bold mb-2">{about.name}</h2>
+    <p class="text-gray-400 mb-4 text-sm sm:text-base">{about.title}</p>
+    <p
+        class="text-gray-300 leading-relaxed max-w-2xl text-sm sm:text-base px-2"
+    >
+        {about.bio}
+    </p>
 </section>

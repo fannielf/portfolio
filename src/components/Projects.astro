@@ -30,9 +30,9 @@ const filtered = repos
 // Enhanced project data with manual technology mapping for better accuracy
 const projectTechMap: Record<string, string[]> = {
     "ray-tracer": ["Rust", "Graphics", "Math"],
-    "portfolio": ["Astro", "TypeScript", "Tailwind CSS"],
-    "rt_2": ["Rust", "Ray Tracing", "Graphics"],
-    "forum": ["Go", "SQLite", "HTML", "CSS"],
+    portfolio: ["Astro", "TypeScript", "Tailwind CSS"],
+    rt_2: ["Rust", "Ray Tracing", "Graphics"],
+    forum: ["Go", "SQLite", "HTML", "CSS"],
     "piscine-go": ["Go", "Algorithms"],
     "groupie-tracker": ["Go", "Web API", "HTML"],
     "real-time-forum": ["Go", "WebSockets", "SQLite"],
@@ -44,17 +44,17 @@ const projectTechMap: Record<string, string[]> = {
 const projectsWithTech: ProjectWithTech[] = await Promise.all(
     filtered.map(async (repo) => {
         let technologies = projectTechMap[repo.name] || [];
-        
+
         // If no manual mapping, use the primary language from GitHub
         if (technologies.length === 0 && repo.language) {
             technologies = [repo.language];
         }
-        
+
         return {
             ...repo,
-            technologies
+            technologies,
         };
-    })
+    }),
 );
 ---
 
@@ -75,7 +75,7 @@ const projectsWithTech: ProjectWithTech[] = await Promise.all(
                     <p class="text-gray-400 text-sm mb-3 line-clamp-3 flex-grow">
                         {project.description ?? "No description available"}
                     </p>
-                    
+
                     {/* Technology Tags */}
                     {project.technologies.length > 0 && (
                         <div class="flex flex-wrap gap-2 mb-3">
@@ -86,7 +86,7 @@ const projectsWithTech: ProjectWithTech[] = await Promise.all(
                             ))}
                         </div>
                     )}
-                    
+
                     <div class="text-gray-500 text-xs flex items-center">
                         <span class="text-yellow-500 mr-1">★</span>
                         {project.stargazers_count}
