@@ -1,9 +1,0 @@
-@import "tailwindcss";
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* Optional: smoother dark mode transitions */
-html {
-  transition: color 0.3s, background-color 0.3s;
-}
