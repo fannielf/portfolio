@@ -82,17 +82,19 @@ header .btn:hover {
 }
 
 .project-card {
-    background-color: #93E1D8;
+    background-color: #4c4c4c;
+    border: 1px solid #93E1D8;
     padding: 1rem;
     border-radius: 1rem;
-    color: #861657;
+    color: #b2eae4;
     transition: all 0.3s;
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    background-color: #FFA69E;
-    color: #DDFFF7;
+    background-color: #b2eae4;
+    border: 2px solid #93E1D8;
+    color: #363636;
 }
 
 /* Skills Section */
@@ -155,22 +157,6 @@ header .btn:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
-}
-.project-card {
-    background-color: #111827;
-    border: 1px solid #1f2937;
-    border-radius: 1rem;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    text-decoration: none;
-    color: #fff;
-}
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(59, 130, 246, 0.3);
-    border-color: #3b82f6;
 }
 .project-card h3 {
     margin-bottom: 0.5rem;
