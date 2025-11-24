@@ -69,6 +69,7 @@ header .btn:hover {
     max-width: 40vw;  /* scales down on smaller screens */
     height: auto;
     border-radius: 1rem; /* rounded corners */
+    border: 1px solid #93E1D8;
     object-fit: cover;
     margin-bottom: 1rem;
 }
