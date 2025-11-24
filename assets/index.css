@@ -74,21 +74,3 @@ body{position:relative;overscroll-behavior-y:none}
 @property --tw-scale-x{syntax:"*";inherits:false;initial-value:1}
 @property --tw-scale-y{syntax:"*";inherits:false;initial-value:1}
 @property --tw-scale-z{syntax:"*";inherits:false;initial-value:1}
-:root {
-  --color-blue-300: #DDFFF7;
-  --color-blue-400: #C5F5ED;
-  --color-blue-500: #B0EFE7;
-
-  --color-blue-600: #93E1D8;
-  --color-blue-700: #7CCDC4;
-  --color-blue-800: #63B8AE;
-  --color-blue-900: #4AA199;
-
-  --color-orange-600: #FFA69E;
-  --color-orange-700: #FF8F85;
-  --color-orange-800: #FF776C;
-  --color-orange-900: #FF5F53;
-
-  --color-pink-800: #AA4465;
-  --color-pink-900: #861657;
-}
