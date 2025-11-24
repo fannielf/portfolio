@@ -11,6 +11,17 @@ body {
     line-height: 1.6;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+section {
+    text-align: center;
+    width: 100%;
+}
+
 /* Container */
 .container {
     max-width: 1200px;
@@ -94,6 +105,7 @@ header .btn:hover {
     font-weight: 500;
     cursor: default;
     transition: transform 0.3s, box-shadow 0.3s;
+    color: black;
 }
 .skill-box img {
     width: 24px;
@@ -105,19 +117,19 @@ header .btn:hover {
 }
 
 /* Skill Colors */
-.skill-java { background-color: #f97316; }
-.skill-spring { background-color: #22c55e; }
-.skill-go { background-color: #1e40af; }
-.skill-mongodb { background-color: #059669; }
-.skill-sqlite { background-color: #4f46e5; }
-.skill-javascript { background-color: #facc15; color: #111; }
-.skill-graphql { background-color: #be185d; }
-.skill-postman { background-color: #f97316; }
-.skill-docker { background-color: #0284c7; }
-.skill-angular { background-color: #b91c1c; }
-.skill-html { background-color: #f59e0b; color: #111; }
-.skill-css { background-color: #2563eb; }
-.skill-socketio { background-color: #374151; }
+.skill-java { background-color: #e89457; }
+.skill-spring { background-color: #57b579; }
+.skill-go { background-color: #536ab4; }
+.skill-mongodb { background-color: #509e86; }
+.skill-sqlite { background-color: #8983ef; }
+.skill-javascript { background-color: #f2da78}
+.skill-graphql { background-color: #c75f8a; }
+.skill-postman { background-color: #f9ad76; }
+.skill-docker { background-color: #51a5cf; }
+.skill-angular { background-color: #bd5858; }
+.skill-html { background-color: #fbc15d; }
+.skill-css { background-color: #769df2; }
+.skill-socketio { background-color: #374151; color: whitesmoke; }
 
 /* Projects Section */
 .projects h2 {
