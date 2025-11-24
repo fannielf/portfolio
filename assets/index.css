@@ -6,8 +6,8 @@ body, h1, h2, h3, p, a {
 }
 body {
     font-family: sans-serif;
-    background-color: #DDFFF7;
-    color: #861657;
+    background-color: #363636;
+    color: #DDFFF7;
     line-height: 1.6;
 }
 
@@ -26,7 +26,7 @@ section {
 .container {
     max-width: 1200px;
     margin: auto;
-    padding: 2rem 1rem;
+    padding: 1rem 1rem;
 }
 
 /* Header */
@@ -40,7 +40,7 @@ header h1 {
     font-size: 2.5rem;
 }
 header p {
-    color: #FFA69E;
+    color: #363636;
     margin: 0.5rem 0;
 }
 header .btn {
@@ -58,6 +58,14 @@ header .btn:hover {
     color: #DDFFF7;
 }
 
+.me-img {
+    width: 200px;
+    max-width: 40vw;  /* scales down on smaller screens */
+    height: auto;
+    border-radius: 1rem; /* rounded corners */
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
 
 /* Projects Section */
 .projects-section {
@@ -117,19 +125,19 @@ header .btn:hover {
 }
 
 /* Skill Colors */
-.skill-java { background-color: #e89457; }
-.skill-spring { background-color: #57b579; }
-.skill-go { background-color: #536ab4; }
-.skill-mongodb { background-color: #509e86; }
-.skill-sqlite { background-color: #8983ef; }
-.skill-javascript { background-color: #f2da78}
-.skill-graphql { background-color: #c75f8a; }
-.skill-postman { background-color: #f9ad76; }
-.skill-docker { background-color: #51a5cf; }
-.skill-angular { background-color: #bd5858; }
-.skill-html { background-color: #fbc15d; }
-.skill-css { background-color: #769df2; }
-.skill-socketio { background-color: #374151; color: whitesmoke; }
+.skill-java { background-color: #eab086; }
+.skill-spring { background-color: #8fc1a1; }
+.skill-go { background-color: #69b5d5; }
+.skill-mongodb { background-color: #7baf9f; }
+.skill-sqlite { background-color: #afacec; }
+.skill-javascript { background-color: #d596b0 }
+.skill-graphql { background-color: #f6e6a6; }
+.skill-postman { background-color: #f8c7a4; }
+.skill-docker { background-color: #df9a9a; }
+.skill-angular { background-color: #aed5e8; }
+.skill-html { background-color: #fad89d; }
+.skill-css { background-color: #a6bdf1; }
+.skill-socketio { background-color: #656e7d; color: whitesmoke; }
 
 /* Projects Section */
 .projects h2 {
@@ -185,6 +193,7 @@ footer {
     padding: 2rem 1rem;
     background-color: #AA4465;
     color: #DDFFF7;
+    width: 100%;
 }
 
 footer a {
