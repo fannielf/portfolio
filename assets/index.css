@@ -1,6 +1,6 @@
 /* Reset and base */
 html, body {
-    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -11,6 +11,8 @@ h1, h2, h3, p, a {
     box-sizing: border-box;
 }
 body {
+    display: flex;
+    flex-direction: column;
     font-family: sans-serif;
     background-color: #363636;
     color: #DDFFF7;
@@ -21,6 +23,11 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin: 1rem;
 }
 
 section {
@@ -40,23 +47,36 @@ header {
     background-color: #AA4465;
     color: #DDFFF7;
     text-align: center;
-    padding: 2rem 1rem;
+    width: 100vw;
+    position: relative;
 }
+.header-container {
+    padding: 1rem 0;
+    text-align: center;
+}
+
+.title-block {
+    display: inline-block;       /* keeps h1 + p centered together */
+}
+
+.header-nav {
+    position: absolute;
+    top: 2rem;                   /* positions button at the top */
+    right: 1rem;                    /* moves button to the right side */
+}
+
 header h1 {
     font-size: 2.5rem;
 }
 header p {
-    color: #363636;
-    margin: 0.5rem 0;
+    color: #DDFFF7;
 }
 header .btn {
-    display: inline-block;
     padding: 0.5rem 1rem;
-    background-color: #93E1D8;
-    color: #861657;
+    background-color: #363636;
+    color: #DDFFF7;
     text-decoration: none;
-    border-radius: 1rem;
-    margin-top: 0.5rem;
+    border-radius: 0.5rem;
     transition: 0.3s;
 }
 header .btn:hover {
@@ -64,31 +84,60 @@ header .btn:hover {
     color: #DDFFF7;
 }
 
+/* About Section */
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 70vw;
+}
+
+.about p {
+    border: #AA4465 4px solid;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
 .me-img {
-    width: 200px;
+    width: 300px;
     max-width: 40vw;  /* scales down on smaller screens */
     height: auto;
     border-radius: 1rem; /* rounded corners */
     border: 1px solid #93E1D8;
     object-fit: cover;
+    margin-top: 2rem;
     margin-bottom: 1rem;
 }
 
 /* Projects Section */
+
 .projects-section {
-    max-width: 1000px;
+    max-width: 90vw;
     margin: 3rem auto;
     display: grid;
     gap: 1.5rem;
 }
 
+.projects-grid {
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    align-items: stretch;
+}
+
 .project-card {
+    display: flex;
+    flex-direction: column;
     background-color: #4c4c4c;
     border: 1px solid #93E1D8;
     padding: 1rem;
     border-radius: 1rem;
     color: #b2eae4;
     transition: all 0.3s;
+    text-decoration: none;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -97,6 +146,37 @@ header .btn:hover {
     border: 2px solid #93E1D8;
     color: #363636;
 }
+
+.projects h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+.project-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.project-tags {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+.project-tags span {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(59,130,246,0.3);
+    background-color: rgba(30,64,175,0.2);
+    color: #93c5fd;
+}
+
+.description {
+    margin: 0.5rem 0 1rem 0;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
 
 /* Skills Section */
 .skills {
@@ -133,52 +213,21 @@ header .btn:hover {
     box-shadow: 0 6px 12px rgba(0,0,0,0.3);
 }
 
+
 /* Skill Colors */
-.skill-java { background-color: #eab086; }
-.skill-spring { background-color: #8fc1a1; }
-.skill-go { background-color: #69b5d5; }
-.skill-mongodb { background-color: #7baf9f; }
+.skill-java { background-color: #e9e0d9; }
+.skill-spring { background-color: #656e7d; color: whitesmoke; }
+.skill-go { background-color: #9cc5b9; }
+.skill-mongodb { background-color: #8cc9e3; }
 .skill-sqlite { background-color: #afacec; }
 .skill-javascript { background-color: #d596b0 }
 .skill-graphql { background-color: #f6e6a6; }
 .skill-postman { background-color: #f8c7a4; }
-.skill-docker { background-color: #df9a9a; }
+.skill-docker { background-color: #e8a6a6; }
 .skill-angular { background-color: #aed5e8; }
 .skill-html { background-color: #fad89d; }
 .skill-css { background-color: #a6bdf1; }
-.skill-socketio { background-color: #656e7d; color: whitesmoke; }
-
-/* Projects Section */
-.projects h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-}
-.project-card h3 {
-    margin-bottom: 0.5rem;
-}
-.project-card p {
-    color: #9ca3af;
-    margin-bottom: 1rem;
-}
-.project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-}
-.project-tags span {
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 9999px;
-    border: 1px solid rgba(59,130,246,0.3);
-    background-color: rgba(30,64,175,0.2);
-    color: #93c5fd;
-}
+.skill-socketio { background-color: #8fc1a1; }
 
 /* Footer */
 footer {
@@ -187,95 +236,93 @@ footer {
     background-color: #AA4465;
     color: #DDFFF7;
     width: 100vw;
+    position: relative;
+    bottom: 0;
 }
 
 footer a {
     color: #DDFFF7;
-    text-decoration: none;
-}
-
-/* Contact Header */
-.header-flex {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-}
-.header-flex h1 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-.header-flex nav .btn {
-    padding: 0.5rem 1rem;
 }
 
 /* Contact Page */
-.contact-section {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 1rem;
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;  /* two columns */
+    gap: 2rem;
+    margin-top: 2rem;
 }
 
+/* Left column (info card) */
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Contact card visual */
 .contact-card {
-    background-color: #93E1D8;
-    color: #861657;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #DDFFF7;
+    border: #AA4465 4px solid;
     border-radius: 1rem;
-    padding: 1rem;
-    margin-bottom: 2rem;
+    padding: 1.5rem;
 }
 
-.contact-card h3 {
-    text-align: center;
+.contact-card a {
+    color: #DDFFF7;
+    text-decoration: none;
+}
+
+/* Right column (form) */
+.contact-form-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    color: #DDFFF7;
+    border: #AA4465 4px solid;
+    border-radius: 1rem;
+    padding: 1.5rem;
 }
 
 .contact-item {
     display: flex;
-    align-items: center;
     gap: 1rem;
-    padding: 0.75rem;
-    background-color: #FFA69E;
-    border-radius: 1rem;
-    margin: 0.5rem 0;
-}
-
-.contact-item:hover {
-    background-color: #AA4465;
-    color: #DDFFF7;
-}
-
-.contact-form-card input,
-.contact-form-card textarea {
-    width: 100%;
-    padding: 0.75rem;
-    border-radius: 1rem;
-    border: 1px solid #861657;
-    background-color: #DDFFF7;
-    color: #861657;
     margin-bottom: 1rem;
 }
 
-.contact-form-card input:focus,
-.contact-form-card textarea:focus {
-    outline: none;
-    border-color: #93E1D8;
-    box-shadow: 0 0 5px #93E1D8;
-}
-
-.contact-form-card button {
-    width: 100%;
-    padding: 1rem;
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
     background-color: #AA4465;
-    color: #DDFFF7;
-    border-radius: 1rem;
-    border: none;
-    font-weight: bold;
-    transition: all 0.3s;
+    color: white;
 }
 
-.contact-form-card button:hover {
-    background-color: #861657;
-    transform: scale(1.05);
+.contact-card h3, .contact-form-card h3 {
+    margin-bottom: 1rem;
 }
+
+.contact-card p{
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    font-weight: bold;
+}
+
+
+/* Responsive — stack on small screens */
+@media (max-width: 600px) {
+    .contact-grid {
+        grid-template-columns: 1fr;  /* one column layout */
+    }
+}
+
 
 /* Toast Notification */
 .toast {

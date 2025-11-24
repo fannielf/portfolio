@@ -1,21 +1,23 @@
 <!DOCTYPE html>
-<html lang="en" data-astro-cid-sckkx6r4> 
+<html lang="en"> 
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Portfolio of Fanni — Aspiring Backend Developer and Grit:Lab Student">
-        <link rel="icon" type="image/png" href="/portfolio/assets/portfolio.png">
-        <link rel="stylesheet" href="assets/index.css">
+        <link rel="icon" type="image/png" href="/assets/portfolio.png">
+        <link rel="stylesheet" href="/assets/index.css">
         <title>Fanni | Portfolio</title>
     </head>
     
     <body>  
         <header>
-            <div class="container">
-                <h1>Fanni Vesanen</h1>
-                <p>Process Specialist · Aspiring Backend Developer · Grit:Lab Student</p>
-                <nav>
-                    <a href="/portfolio/contact/" class="btn">Contact Me</a>
+            <div class="header-container">
+                <div class="title-block">
+                    <h1>Fanni Vesanen</h1>
+                    <p>Process Specialist · Aspiring Backend Developer · Grit:Lab Student</p>
+                </div>
+                <nav class="header-nav">
+                    <a href="/contact/index.html" class="btn">Contact Me</a>
                 </nav>
             </div>
         </header>
@@ -23,10 +25,8 @@
         <main>
             <!-- About -->
             <section class="about container">
-                <img class= "me-img" src="/portfolio/assets/me.jpg" alt="Fanni">
-                <h2>Fanni Vesanen</h2>
-                <p class="subtitle">Open for opportunities</p>
-                <p class="description">
+                <img class= "me-img" src="assets/me.jpg" alt="Fanni">
+                <p>
                     I'm a developer student at grit:lab in Aland Islands, with experience from problem-solving,
                     understanding customer needs, and developing processes in multiple fields. I'm continuously
                     improving my personal and professional skills, looking for my first role as a backend developer.
@@ -59,7 +59,7 @@
 
 <a href="https://github.com/Linnie43/buy-01-git" target="_blank" class="project-card"> 
     <h3> buy-01 </h3> 
-    <p> 
+    <p class="description"> 
         End‑to‑end e‑commerce system built with Spring Boot microservices and an Angular frontend.
     </p>  
     <div class="project-tags"> 
@@ -72,7 +72,7 @@
 
 <a href="https://github.com/RuBoMa/social-network-git" target="_blank" class="project-card"> 
     <h3> social-network-git </h3> 
-    <p> 
+    <p class="description"> 
         Facebook-like social platform built with Go, JavaScript, and WebSockets. 
     </p>  
     <div class="project-tags"> 
@@ -88,7 +88,7 @@
   class="project-card"
  >
   <h3> graphql </h3>
-  <p class="project-tags">
+  <p class="description">
     A web dashboard that connects to grit:lab GraphQL API using JWT authentication (on location only).
   </p>
 
@@ -103,7 +103,7 @@
   class="project-card"
 >
   <h3> groupie-tracker </h3>
-  <p>
+  <p class="description">
     A web application that consumes RESTful APIs to display artist and concert information.
   </p>
 
@@ -118,7 +118,7 @@
   class="project-card"
 >
   <h3> ascii-art-web </h3>
-  <p>
+  <p class="description">
     webpage for displaying ascii art
   </p>
 
@@ -133,7 +133,7 @@
   class="project-card"
 >
   <h3> go-reloaded </h3>
-  <p>
+  <p class="description">
     program that acts like auto correction tool
   </p>
 
@@ -149,7 +149,7 @@
   class="project-card"
 >
   <h3> lem-in </h3>
-  <p>
+  <p class="description">
     An ant farm consisting of ants, rooms and tunnels. Finding the quickest way to move all ants to the end room with the help of algorithms.
   </p>
 
@@ -164,7 +164,7 @@
   class="project-card"
 >
   <h3> net-cat </h3>
-  <p>
+  <p class="description">
     No description available
   </p>
 
@@ -179,7 +179,7 @@
   class="project-card"
 >
   <h3> make-your-game </h3>
-  <p>
+  <p class="description">
     A single-player Pac-Man game  with smooth rendering for 60 FPS movement and algorithm usage for ghost AI.
   </p>
 
@@ -196,7 +196,7 @@
   class="project-card"
 >
   <h3> bomberman-dom </h3>
-    <p>
+    <p class="description">
         A real-time multiplayer Bomberman-style game with Twilight theme on Node.js websockets.
     </p>
 
@@ -212,7 +212,7 @@
   class="project-card"
 >
   <h3> sortable </h3>
-  <p>
+  <p class="description">
     Fetching RestAPI data about superheroes and clean, organize and present it so that the user can filter different attributes.
   </p>
 
@@ -221,6 +221,8 @@
   </div>
 </a>
 </div>  
+            </section>
+        </main>
 
 <footer>
         Forked shamelessly from <a href="https://github.com/RuBoMa" target="_blank">RuBoMa</a> · Hosted on GitHub Pages
