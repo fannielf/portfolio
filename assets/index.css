@@ -169,6 +169,7 @@ header h1 {
     text-align: center;
     margin-left: 1rem;
     margin-right: 1rem;
+    max-width: 85%;
 }
 .skills h2 {
     margin-bottom: 1.5rem;
