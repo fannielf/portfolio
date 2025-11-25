@@ -1,9 +1,9 @@
-/* Reset and base */
 html, body {
-    height: 100%;
+    min-height: 100%;
     margin: 0;
     padding: 0;
-}
+    overflow-x: hidden;
+}   
 
 h1, h2, h3, p, a {
     margin: 0;
@@ -13,7 +13,7 @@ h1, h2, h3, p, a {
 body {
     display: flex;
     flex-direction: column;
-    font-family: sans-serif;
+    font-family: 'Roboto', sans-serif;
     background-color: #363636;
     color: #DDFFF7;
     line-height: 1.5;
@@ -23,11 +23,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-.subtitle {
-    font-size: 1.5rem;
-    margin: 1rem;
+    width: 100%;
 }
 
 section {
@@ -35,10 +31,15 @@ section {
     width: 100%;
 }
 
+h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
 /* Container */
 .container {
-    max-width: 1200px;
-    margin: auto;
+    max-width: 100%;
     padding: 1rem 1rem;
 }
 
@@ -47,7 +48,7 @@ header {
     background-color: #AA4465;
     color: #DDFFF7;
     text-align: center;
-    width: 100vw;
+    width: 100%;
     position: relative;
 }
 .header-container {
@@ -55,33 +56,8 @@ header {
     text-align: center;
 }
 
-.title-block {
-    display: inline-block;       /* keeps h1 + p centered together */
-}
-
-.header-nav {
-    position: absolute;
-    top: 2rem;                   /* positions button at the top */
-    right: 1rem;                    /* moves button to the right side */
-}
-
 header h1 {
     font-size: 2.5rem;
-}
-header p {
-    color: #DDFFF7;
-}
-header .btn {
-    padding: 0.5rem 1rem;
-    background-color: #363636;
-    color: #DDFFF7;
-    text-decoration: none;
-    border-radius: 0.5rem;
-    transition: 0.3s;
-}
-header .btn:hover {
-    background-color: #FFA69E;
-    color: #DDFFF7;
 }
 
 /* About Section */
@@ -89,34 +65,42 @@ header .btn:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width: 70vw;
+    width: 100%;
+    max-width: 700px;
+    padding: 1rem;
 }
 
-.about p {
+.about-text {
     border: #AA4465 4px solid;
     border-radius: 2rem;
     padding: 1rem;
     margin-top: 1rem;
+    font-weight: 200; /* thin */
 }
 
 .me-img {
-    width: 300px;
-    max-width: 40vw;  /* scales down on smaller screens */
+    width: min(250px, 60vw);
     height: auto;
     border-radius: 1rem; /* rounded corners */
     border: 1px solid #93E1D8;
     object-fit: cover;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    transition: 0.3s ease; /* IMPORTANT for smooth glow */
+
+}
+
+.me-img:hover {
+    box-shadow: 0 0 20px #93E1D8;
+    transform: scale(1.03); /* optional subtle zoom */
 }
 
 /* Projects Section */
 
 .projects-section {
-    max-width: 90vw;
-    margin: 3rem auto;
+    max-width: 90%;
+    margin: 2rem auto;
     display: grid;
-    gap: 1.5rem;
 }
 
 .projects-grid {
@@ -143,15 +127,10 @@ header .btn:hover {
 .project-card:hover {
     transform: translateY(-5px);
     background-color: #b2eae4;
-    border: 2px solid #93E1D8;
+    border: 5px solid #93E1D8;
     color: #363636;
 }
 
-.projects h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-}
 .project-card h3 {
     margin-bottom: 0.5rem;
 }
@@ -163,25 +142,33 @@ header .btn:hover {
     gap: 0.5rem;
 }
 .project-tags span {
-    font-size: 0.75rem;
+    font-size: 0.8rem;  
     padding: 0.25rem 0.5rem;
-    border-radius: 9999px;
-    border: 1px solid rgba(59,130,246,0.3);
-    background-color: rgba(30,64,175,0.2);
-    color: #93c5fd;
+    border-radius: 0.5rem;
+    border: 1px solid #B2EAE4;
+    background-color: #DDFFF7;
+    color: #363636;
+}
+
+.project-card:hover .project-tags span {
+    border: 3px solid #B2EAE4;
+    background-color: #363636;
+    color: #DDFFF7;
 }
 
 .description {
-    margin: 0.5rem 0 1rem 0;
-    font-size: 0.9rem;
+    margin: 0.5rem 0 1rem 0;    
+    font-size: 0.95rem;
     text-align: left;
 }
 
 
 /* Skills Section */
+
 .skills {
     text-align: center;
-    margin-bottom: 3rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
 }
 .skills h2 {
     margin-bottom: 1.5rem;
@@ -232,25 +219,18 @@ header .btn:hover {
 /* Footer */
 footer {
     text-align: center;
-    padding: 2rem 1rem;
+    padding: 2rem;
     background-color: #AA4465;
     color: #DDFFF7;
-    width: 100vw;
-    position: relative;
-    bottom: 0;
+    width: 100%;
 }
 
 footer a {
     color: #DDFFF7;
+    font-style: italic;
 }
 
 /* Contact Page */
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;  /* two columns */
-    gap: 2rem;
-    margin-top: 2rem;
-}
 
 /* Left column (info card) */
 .contact-info {
@@ -263,11 +243,8 @@ footer a {
 .contact-card {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     color: #DDFFF7;
-    border: #AA4465 4px solid;
-    border-radius: 1rem;
-    padding: 1.5rem;
 }
 
 .contact-card a {
@@ -275,21 +252,17 @@ footer a {
     text-decoration: none;
 }
 
-/* Right column (form) */
-.contact-form-card {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-start;
-    color: #DDFFF7;
-    border: #AA4465 4px solid;
-    border-radius: 1rem;
-    padding: 1.5rem;
-}
-
 .contact-item {
     display: flex;
     gap: 1rem;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -301,11 +274,7 @@ footer a {
     justify-content: center;
     border-radius: 0.5rem;
     background-color: #AA4465;
-    color: white;
-}
-
-.contact-card h3, .contact-form-card h3 {
-    margin-bottom: 1rem;
+    color: #DDFFF7;
 }
 
 .contact-card p{
@@ -317,30 +286,36 @@ footer a {
 
 
 /* Responsive — stack on small screens */
-@media (max-width: 600px) {
-    .contact-grid {
-        grid-template-columns: 1fr;  /* one column layout */
+@media (max-width: 500px) {
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    .about {
+        padding: 0 1rem;
+        max-width: 95%;
+    }
+
+    .me-img {
+        max-width: 70vw;
+    }
+
+    .projects-section {
+        max-width: 95vw;
+    }
+
+    .skills{
+        max-width: 95vw;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .project-card {
+        padding: 0.75rem;
+    }
+
+    footer {
+        padding: 1.5rem 1rem;
     }
 }
-
-
-/* Toast Notification */
-.toast {
-    position: fixed;
-    top: 1rem;
-    right: 1rem;
-    background-color: #16a34a;
-    color: white;
-    padding: 1rem 1.5rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-    z-index: 100;
-}
-.toast-content h4 {
-    margin: 0 0 0.25rem 0;
-}
-.toast-content p {
-    margin: 0;
-    font-size: 0.875rem;
-}
-
