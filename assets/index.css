@@ -95,6 +95,68 @@ header h1 {
     transform: scale(1.03); /* optional subtle zoom */
 }
 
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+/* Contact card visual */
+.contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #DDFFF7;
+}
+
+.contact-card a {
+    color: #DDFFF7;
+    text-decoration: none;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1rem;
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    background-color: #AA4465;
+    color: #DDFFF7;
+    overflow: visible; /* allow SVG to slightly overflow */
+
+}
+
+.contact-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    fill: currentColor;
+    color: inherit;
+}
+
+.contact-card p{
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    font-weight: bold;
+}
+
 /* Projects Section */
 
 .projects-section {
@@ -231,59 +293,7 @@ footer a {
     font-style: italic;
 }
 
-/* Contact Page */
 
-/* Left column (info card) */
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-/* Contact card visual */
-.contact-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #DDFFF7;
-}
-
-.contact-card a {
-    color: #DDFFF7;
-    text-decoration: none;
-}
-
-.contact-item {
-    display: flex;
-    gap: 1rem;
-}
-
-.contact-links {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-.contact-icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 0.5rem;
-    background-color: #AA4465;
-    color: #DDFFF7;
-}
-
-.contact-card p{
-    margin: 0;
-    display: flex;
-    align-items: flex-start;
-    font-weight: bold;
-}
 
 
 /* Responsive — stack on small screens */
